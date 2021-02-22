@@ -1,0 +1,17 @@
+public class Assessment {
+    public static void main(String[] args)
+    {
+        Assessment Number1= new Assessment();
+        Number1.Name();
+    }
+    public void Name()
+    {
+     String a= "How to Pass String Parameter";
+     StringBuilder lj= new StringBuilder(a);
+     System.out.println(""+ a );
+     System.out.println(" " + a.length());
+     System.out.println(" " + a.toLowerCase());
+     System.out.println(" " + a.toUpperCase());
+     System.out.println(" " + lj.reverse());
+    }
+}
