@@ -6,12 +6,16 @@ public class Assessment {
     }
     public void Name()
     {
-     String a= "How to Pass String Parameter";
+     String a= "How to Pass String Parameter in Java Coding";
      StringBuilder lj= new StringBuilder(a);
+     String[] splitStrings= a.split(" , ", 4);
+     for (String s: splitStrings)
+     System.out.println(String.format("\" %s \"", s));
      System.out.println(""+ a );
-     System.out.println(" " + a.length());
-     System.out.println(" " + a.toLowerCase());
-     System.out.println(" " + a.toUpperCase());
-     System.out.println(" " + lj.reverse());
-    }
+     System.out.println("String Length: " + a.length());
+     System.out.println("String Length without space:  " + a.replace(" ", "").length());
+     System.out.println("Lower Case is:  " + a.toLowerCase());
+     System.out.println("Upper Case is:  " + a.toUpperCase());
+     System.out.println("Reverse is:  " + lj.reverse());
+     }
 }
