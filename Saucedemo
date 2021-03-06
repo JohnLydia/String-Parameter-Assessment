@@ -1,0 +1,49 @@
+package Saucedemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class demologin {
+    public static void main(String args[])
+    {
+        demologin page= new demologin();
+        page.credentials();
+    }
+    public void credentials()
+    {
+        System.setProperty("web.chrome.driver", "chromedriver.exe");
+        WebDriver chrome = new ChromeDriver();
+        chrome.get("https://www.saucedemo.com/inventory.html");
+        //homepage
+        WebElement username = chrome.findElement(By.xpath("//input[@data-test='username']"));
+        username.sendKeys("standard_user");
+        WebElement password = chrome.findElement(By.xpath("//input[@type='password']"));
+        password.sendKeys("secret_sauce");
+        WebElement selectlogin = chrome.findElement(By.xpath("//input[@type='submit']"));
+        selectlogin.submit();
+        WebElement image = chrome.findElement(By.xpath("//img[@alt='Sauce Labs Backpack']"));
+        image.isDisplayed();
+        WebElement heading = chrome.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div[2]/div/div[1]/div[2]/a/div"));
+        heading.isDisplayed();
+        WebElement dollar = chrome.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div[2]/div/div[1]/div[3]/div"));
+        dollar.isDisplayed();
+        WebElement addtocart = chrome.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div[2]/div/div[1]/div[3]/button"));
+        addtocart.click();
+        WebElement cart = chrome.findElement(By.xpath("//div[@id='shopping_cart_container']"));
+        cart.click();
+        WebElement checkout = chrome.findElement(By.xpath("//a[@class='btn_action checkout_button']"));
+        checkout.click();
+        WebElement firstname = chrome.findElement(By.xpath("//input[@id='first-name']"));
+        firstname.sendKeys("Lydia");
+        WebElement lastname = chrome.findElement(By.xpath("//input[@id='last-name']"));
+        lastname.sendKeys("John");
+        WebElement postalcode = chrome.findElement(By.xpath("//input[@id='postal-code']"));
+        postalcode.sendKeys("641652");
+        WebElement submit = chrome.findElement(By.xpath("//input[@type='submit']"));
+        submit.click();
+        WebElement finish = chrome.findElement(By.xpath("//a[@class='btn_action cart_button']"));
+        finish.click();
+        }
+}
